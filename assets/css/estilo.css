@@ -1,0 +1,11 @@
+.user-img-menu {
+	width: 30px; 
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.msg-error-form {
+	color: #ff2222;
+    font-weight: bold;
+    font-size: 12px;
+    display: none;
+}
