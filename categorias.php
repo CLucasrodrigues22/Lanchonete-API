@@ -54,8 +54,12 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 				<td><?= $categoria->getId() ?></td>
 				<td><?= $categoria->getNome() ?></td>
 				<td>
-					<a href="form_categoria.php?id=<?= $categoria->getId() ?>">Editar</a> | 
-					<a href="controle_categoria.php?acao=deletar&id=<?= $categoria->getId() ?>" onclick="return confirm('Deseja realmente excluir?')">Excluir</a>
+					<a href="form_categoria.php?id=<?= $categoria->getId() ?>" class="btn btn-warning">
+						<i class="fas fa-edit"></i>
+					</a>
+					<a href="controle_categoria.php?acao=deletar&id=<?= $categoria->getId() ?>" onclick="return confirm('Deseja realmente excluir?')" class="btn btn-danger">
+						<i class="fas fa-trash-alt"></i>
+					</a>
 				</td>
 			</tr>
 		<?php } ?>
