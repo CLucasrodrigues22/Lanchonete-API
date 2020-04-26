@@ -25,7 +25,7 @@
 <form action="controle_usuario.php?acao=<?= ( $usuario->getId() != '' ? 'editar' : 'cadastrar' )?>" method="post" enctype="multipart/form-data">
 	<div class="row">
 		<div class="col-3 text-center">
-			<img src="assets/img/usuarios/<?= ($usuario->getImagem() != '' && file_exists('assets/img/usuarios/'.$usuario->getImagem()) ? $usuario->getImagem() : 'usuario.png') ?>" alt="" width="150" class="rounded-circle img-thumbnail" id="fotopreview">
+			<img src="/assets/img/usuarios/<?= ($usuario->getImagem() != '' && file_exists('assets/img/usuarios/'.$usuario->getImagem()) ? $usuario->getImagem() : 'usuario.png') ?>" alt="" width="150" class="rounded-circle img-thumbnail" id="fotopreview">
 			<br>
 			<br>
 			<div class="custom-file">
@@ -44,15 +44,15 @@
 					<input type="text" class="form-control" name="id" id="id" value="<?=($usuario->getId() != '' ? $usuario->getId() : '')?>" readonly>
 				</div>
 				<div class="form-group">
-					<label for="nome">Nome: </label>
+					<label for="nome">Nome</label>
 					<input type="text" class="form-control" name="nome" id="nome" required value="<?= ($usuario->getNome() != '' ? $usuario->getNome() : '') ?>">
 				</div>
 				<div class="form-group">
-					<label for="email">E-mail: </label>
+					<label for="email">E-mail</label>
 					<input type="email" name="email" id="email" class="form-control" required value="<?= ($usuario->getEmail() != '' ? $usuario->getEmail() : ''); ?>">
 				</div>
 				<div class="form-group">
-					<label for="senha">Senha: </label>
+					<label for="senha">Senha</label>
 					<input type="password" name="senha" id="senha" class="form-control" 
 					<?= ($usuario->getId() == '' ? ' required' : '' ) ?>>
 				</div>

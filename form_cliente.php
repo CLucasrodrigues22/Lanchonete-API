@@ -32,6 +32,9 @@
 			  <input type="file" class="custom-file-input" name="imagem" id="imagem">
 			  <label class="custom-file-label" for="imagem">Escolher...</label>
 			</div>
+			<!-- <div class="form-group">
+				<input type="file" name="imagem" id="imagem" class="form-control-file">
+			</div> -->
 		</div>
 		<div class="col-9">
 			<p>&nbsp;</p>

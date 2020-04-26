@@ -26,15 +26,15 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 		<h2>Gerenciar produtos</h2>
 	</div>
 	<div class="col-4">
-		<form class="form-inline my-2 my-lg-0">
-		<input class="form-control mr-sm-2" name="pesquisa" type="search" placeholder="Pesquisar" aria-label="Pesquisar" value="<?= (isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '') ?>">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-				<i class="fas fa-search"></i>	
-			</button>
-			<a href="./produtos.php" class="btn btn-outline-warning my-2 my-sm-0">
-				<i class="fas fa-trash-alt"></i>
-			</a>
-		</form>
+	<form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" name="pesquisa" type="search" placeholder="Pesquisar" aria-label="Pesquisar" value="<?= (isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '') ?>">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+      	<i class="fas fa-search"></i>	
+      </button>
+      <a href="./produtos.php" class="btn btn-outline-warning my-2 my-sm-0">
+      	<i class="fas fa-trash-alt"></i>
+      </a>
+    </form>
 	</div>
 	<div class="col-2">
 		<a href="form_produto.php" class="btn btn-success">Novo</a>

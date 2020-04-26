@@ -8,7 +8,7 @@ class Conexao
 	private $conn;
 
 	public function __construct() {
-		$this->host = 'mysql:host=localhost;dbname=lanchonete_pdo';
+		$this->host = 'mysql:host=localhost;dbname=lanchonete_api';
 		$this->user = 'root';
 		$this->password = 'microsol45';
 	}

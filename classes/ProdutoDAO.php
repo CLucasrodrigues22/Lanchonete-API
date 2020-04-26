@@ -33,7 +33,9 @@ class ProdutoDAO extends Model
     {
         if($pesquisa != '') {
             $sql = "SELECT * FROM {$this->tabela} 
-                    WHERE nome like '%{$pesquisa}%'";
+                    WHERE nome like '%{$pesquisa}%'
+                        OR descricao like '%{$pesquisa}%'
+                        OR qtd like '%{$pesquisa}%'";
         } else {
             $sql = "SELECT * FROM {$this->tabela}";
         }

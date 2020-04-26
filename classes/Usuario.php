@@ -4,7 +4,7 @@ class Usuario
 	private $id;
 	private $nome;
 	private $senha;
-    private $email;
+	private $email;
     private $imagem;
 
     /**
@@ -86,9 +86,6 @@ class Usuario
 
         return $this;
     }
-
-
-    
     /**
      * @return mixed
      */
