@@ -1,5 +1,13 @@
 <?php 
-session_start();
+require_once './includes/validacao.php';
+require_once './includes/funcoes.php';
+$permissoes = retornaControle('usuario');
+$permissoesImagem = retornaControle('removeImagemUsuario');
+
+if(empty($permissoes)) {
+	header("Location: adminstrativa.php?msg=Acesso negado.");
+}
+
 require 'classes/Usuario.php';
 require 'classes/UsuarioDAO.php';
 
@@ -26,13 +34,13 @@ $upload['erros'][4] = 'Não foi feito o upload do arquivo';
 
 
 
-if($acao == 'deletar') {
+if($acao == 'deletar' && $permissoes['delete']) {
 
 	$usuarioDAO->deletar($id);
 	$msg = 'Usuário excluído com sucesso';
 
 	header("Location: usuarios.php?msg=$msg");
-} else if($acao == 'cadastrar') {
+} else if($acao == 'cadastrar' && $permissoes['insert']) {
 
 	if($_FILES['imagem']['name'] != '') {
 
@@ -64,12 +72,14 @@ if($acao == 'deletar') {
 	$usuario->setNome($_POST['nome']);
 	$usuario->setEmail($_POST['email']);
 	$usuario->setSenha($_POST['senha']);
+	$usuario->setPerfilId($_POST['perfil_id']);
 	$id_usuario = $usuarioDAO->insereUsuario($usuario);
 	$msg = 'Usuário cadastrado com sucesso';
 
 	header("Location: form_usuario.php?id=$id_usuario&msg=$msg");
 
-} else if($acao == 'editar') {
+} else if(($acao == 'editar' && $permissoes['update']) 
+			|| ($_SESSION['id_usuario'] == $_POST['id'])) {
 
 	if($_POST['senha'] != ''){
 		$usuario->setSenha($_POST['senha']);
@@ -126,12 +136,13 @@ if($acao == 'deletar') {
 	$usuario->setId($_POST['id']);
 	$usuario->setEmail($_POST['email']);
 	$usuario->setNome($_POST['nome']);
+	$usuario->setPerfilId($_POST['perfil_id']);
 	$usuarioDAO->alteraUsuario($usuario);
 	$msg = 'Usuário alterado com sucesso';
 	
 	header("Location: form_usuario.php?id=$id_usuario&msg=$msg");
 
-} else if($acao == 'removeImagem') {
+} else if($acao == 'removeImagem' && !empty($permissoesImagem)) {
 	$usuario = $usuarioDAO->get($id);
 
 	$imagem_a_remover = $upload['pasta_usuarios'] . $usuario->getImagem();
@@ -146,6 +157,9 @@ if($acao == 'deletar') {
 	
 	header("Location: usuarios.php?msg=$msg");
 
+} else {
+	$msg = 'Não possui permissão.';
+	header("Location: usuarios.php?msg=$msg");
 }
 
 

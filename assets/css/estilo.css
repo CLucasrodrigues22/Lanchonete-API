@@ -1,3 +1,9 @@
+body {
+	background: #f1f1f1;
+}
+.row {
+	margin-bottom: 15px;
+}
 .user-img-menu {
 	width: 30px; 
 	margin-right: 10px;
@@ -23,4 +29,11 @@
 }
 .card-dashboard {
 	padding: 0;
+}
+#produtos_categoria, #vendas_status {
+	height: 250px;
+}
+.imgprod {
+	width: 385px;
+    height: 300px;
 }

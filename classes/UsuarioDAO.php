@@ -14,7 +14,7 @@ class UsuarioDAO extends Model
 
     public function insereUsuario(Usuario $usuario)
     {
-    	$values = "null, '{$usuario->getNome()}','{$usuario->getEmail()}', '{$usuario->getSenha()}', '{$usuario->getImagem()}'";
+    	$values = "null, '{$usuario->getNome()}','{$usuario->getEmail()}', '{$usuario->getSenha()}', '{$usuario->getImagem()}', '{$usuario->getPerfilId()}'";
     	return $this->inserir($values);
     }
     public function alteraUsuario(Usuario $usuario)
@@ -25,6 +25,7 @@ class UsuarioDAO extends Model
     	$values = "
 			nome = '{$usuario->getNome()}'
 			, email = '{$usuario->getEmail()}'
+            , perfil_id = '{$usuario->getPerfilId()}'
             {$altera_imagem}
 			{$altera_senha}
     	";
@@ -34,7 +35,8 @@ class UsuarioDAO extends Model
 
     public function getLogin($email, $senha)
     {
-    	$sql = "SELECT * FROM {$this->tabela} 
+    	$sql = "SELECT u.*, p.descricao as perfil FROM {$this->tabela} u
+                LEFT JOIN perfis p ON p.id = u.perfil_id
                 WHERE email = :email AND senha = :senha";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':email', $email);
@@ -43,16 +45,29 @@ class UsuarioDAO extends Model
     	$stmt->execute();
     	return $stmt->fetch();
     }
-    public function listar($pesquisa = '')
+    public function listarUsuarios($condicao = '')
     {
-        if($pesquisa != '') {
-            $sql = "SELECT * FROM {$this->tabela} 
-                    WHERE nome like '%{$pesquisa}%'";
-        } else {
-            $sql = "SELECT * FROM {$this->tabela}";
+        $where = '';
+        if($condicao != '') {
+            $where = " WHERE {$condicao}";
         }
+        $sql = "SELECT u.*, p.descricao as perfil FROM {$this->tabela} u
+                LEFT JOIN perfis p ON p.id = u.perfil_id
+                {$where}";
         $stmt = $this->db->prepare($sql);
         $stmt->setFetchMode(PDO::FETCH_CLASS, $this->class);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    public function getPermissoes($id_perfil)
+    {
+        $sql = "SELECT p.descricao, pm.*, c.nome as controle
+                FROM perfis p
+                LEFT JOIN permissoes pm ON pm.perfil_id = p.id
+                LEFT JOIN controles c ON c.id = pm.controle_id
+                WHERE p.id = {$id_perfil}";
+        $stmt = $this->db->prepare($sql);
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $stmt->execute();
         return $stmt->fetchAll();
     }
