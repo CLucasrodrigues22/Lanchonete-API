@@ -122,7 +122,7 @@ if (isset($_GET['id']) && $_GET['id'] != '') {
 			<?php endif; ?>
 			<div class="card">
 				<div class="card-header">
-					Imagens cadastradas
+					Imagens do produto
 				</div>
 				<div class="card-body">
 					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
