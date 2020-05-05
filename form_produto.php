@@ -128,23 +128,19 @@ if (isset($_GET['id']) && $_GET['id'] != '') {
 					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="assets/img/produtos/3/refrigerante2-20200421010412.jpg" class="img-thumbnail imgprod">
+								<?php foreach($imagens as $imagem): ?>
+									<img src="<?= $imagem->getCaminho(); ?>" class="item" width="150px">
+								<?php endforeach; ?>
 							</div>
-							<!-- <div class="carousel-item">
-								<img src="assets/img/produtos/3/refrigerante3-20200421010413.jpg" class="img-thumbnail" width="150px">
-							</div>
-							<div class="carousel-item">
-								<img src="assets/img/produtos/3/refrigerante-20200421010412.jpg" class="img-thumbnail" width="150px">
-							</div> -->
-						</div>
-						<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
+							<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Anterior</span>
+							</a>
+							<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Próximo</span>
+							</a>
+						</div>	
 					</div>
 				</div>
 			</div>
