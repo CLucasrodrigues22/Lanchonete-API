@@ -126,12 +126,11 @@ if (isset($_GET['id']) && $_GET['id'] != '') {
 				</div>
 				<div class="card-body">
 					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-						<div class="carousel-inner">
-							<div class="carousel-item active">
-								<?php foreach($imagens as $imagem): ?>
-									<img src="<?= $imagem->getCaminho(); ?>" class="item" width="150px">
-								<?php endforeach; ?>
+						<?php foreach($imagens as $key -> $imagem): ?>
+							<div class="carousel-item" <? ($key == 0  ? 'active' : '')?> >
+								<img src="<?= $imagem->getCaminho(); ?>" class="item" width="150px">
 							</div>
+						<?php endforeach; ?>
 							<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
 								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 								<span class="sr-only">Anterior</span>
@@ -140,7 +139,6 @@ if (isset($_GET['id']) && $_GET['id'] != '') {
 								<span class="carousel-control-next-icon" aria-hidden="true"></span>
 								<span class="sr-only">Próximo</span>
 							</a>
-						</div>	
 					</div>
 				</div>
 			</div>
