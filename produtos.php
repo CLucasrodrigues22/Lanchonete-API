@@ -57,33 +57,33 @@ if(isset($_GET['pesquisa']) && $_GET['pesquisa'] != '') {
 			<?php foreach($produtos as $produto){ 
 				$categoria = $categoriaDAO->get($produto->getCategoria()); 
 			?>
-			<tr
-				<?php if($produto->getQtd() < 1) {
-					echo 'class="table-danger"';
-				} else if($produto->getQtd() < 5) {
-					echo 'class="table-warning"';
-				}
-				?>
-			>
-				<td><?= $produto->getId() ?></td>
-				<td><?= $produto->getNome() ?></td>
-				<td>R$ <?= $produto->getPreco() ?></td>
-				<td><?= $categoria->getNome() ?></td>
-				<td><?= $produto->getQtd() ?></td>
-				<td data-toggle="tooltip" title="<?= ($produto->getDescricao() != '' ? $produto->getDescricao() : ''); ?>"><?= ($produto->getDescricao() != '' ? substr($produto->getDescricao(),0,15).'...' : ''); ?></td>
-				<td>
-					<?php if($permissoes['update'] || $permissoes['show']): ?>
-					<a href="form_produto.php?id=<?= $produto->getId() ?>" class="btn btn-warning" data-toggle="tooltip" title="Exibir/Editar produto">
-						<i class="fas fa-edit"></i>
-					</a>
-					<?php endif; ?>
-					<?php if($permissoes['delete']): ?>
-					<a href="controle_produto.php?acao=deletar&id=<?= $produto->getId() ?>" onclick="return confirm('Deseja realmente excluir?')" class="btn btn-danger" data-toggle="tooltip" title="Excluir produto">
-						<i class="fas fa-trash-alt"></i>
-					</a>
-					<?php endif; ?>
-				</td>
-			</tr>
+				<tr
+					<?php if($produto->getQtd() < 1) {
+						echo 'class="table-danger"';
+					} else if($produto->getQtd() < 5) {
+						echo 'class="table-warning"';
+					}
+					?>
+				>
+					<td><?= $produto->getId() ?></td>
+					<td><?= $produto->getNome() ?></td>
+					<td>R$ <?= $produto->getPreco() ?></td>
+					<td><?= $categoria->getNome() ?></td>
+					<td><?= $produto->getQtd() ?></td>
+					<td data-toggle="tooltip" title="<?= ($produto->getDescricao() != '' ? $produto->getDescricao() : ''); ?>"><?= ($produto->getDescricao() != '' ? substr($produto->getDescricao(),0,15).'...' : ''); ?></td>
+					<td>
+						<?php if($permissoes['update'] || $permissoes['show']): ?>
+						<a href="form_produto.php?id=<?= $produto->getId() ?>" class="btn btn-warning" data-toggle="tooltip" title="Exibir/Editar produto">
+							<i class="fas fa-edit"></i>
+						</a>
+						<?php endif; ?>
+						<?php if($permissoes['delete']): ?>
+						<a href="controle_produto.php?acao=deletar&id=<?= $produto->getId() ?>" onclick="return confirm('Deseja realmente excluir?')" class="btn btn-danger" data-toggle="tooltip" title="Excluir produto">
+							<i class="fas fa-trash-alt"></i>
+						</a>
+						<?php endif; ?>
+					</td>
+				</tr>
 			<?php } ?>
 		</tbody>
 	</table>
