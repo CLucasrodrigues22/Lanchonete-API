@@ -1,7 +1,7 @@
 # Projeto Lanchonete API
 
 
-<img src="https://drive.google.com/file/d/1Tb4wi5muJfbdrTTM_yn1kYzIfRpco5gg/view?usp=sharing" alt="Lanchonete Dashboard">
+<img src="https://github.com/CLucasrodrigues22/Lanchonete_pdo_aluno/blob/master/assets/webfonts/dashboard.png" alt="Lanchonete Dashboard">
 
 > Projeto desenvolvido durante o Curso de Técnico em informática onde foi criado uma aplicação para gerenciamento de uma lanchonete (genérica).
 
