@@ -3,7 +3,7 @@
 
 <img src="https://github.com/CLucasrodrigues22/Lanchonete_pdo_aluno/blob/master/assets/webfonts/dashboard.png" alt="Lanchonete Dashboard">
 
-> Projeto desenvolvido durante o Curso de Técnico em informática onde foi criado uma aplicação para gerenciamento de uma lanchonete (genérica).
+> Esse aplicação foi criada para gerenciamento de uma lanchonete (genérica) usando PHP(DAO) e Mysql no Backend.
 
 ### Funções da aplicação
 
