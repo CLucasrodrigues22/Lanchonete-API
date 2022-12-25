@@ -1,7 +1,7 @@
-# Projeto Lanchonete API
+# Projeto Grecia Burger
 
 
-<img src="https://github.com/CLucasrodrigues22/grecia-burger/admin/db/grecia-burger.png" alt="Lanchonete Dashboard">
+<img src="https://drive.google.com/file/d/1IMcN5jxzcQBT88wHuRfOymsmiLEDns0p/view?usp=share_link" alt="Lanchonete Dashboard">
 
 > Esse aplicação foi criada para gerenciamento de uma lanchonete (genérica) usando PHP(DAO) e Mysql no Backend em Curso.
 
@@ -9,6 +9,8 @@
 
 O que essa aplicação faz?
 
+- [x] Criação de pedidos;
+- [x] Vendas de produtos;
 - [x] Controle de estoque para Suprimentos de uma lanchonete com informativos (alertas) de quantidade;
 - [x] Gerenciamento de clientes;
 - [x] Niveis de Perfis (Administrativo, vendendor, Financeiro);
@@ -22,9 +24,9 @@ Para a instalação da aplicação, são necessário os seguintes requisitos:
 * PHP versão 7 ou maior;
 * Banco de dados MySQL;
 
-## 🚀 Instalando a Lanchonete API
+## 🚀 Instalando o Grecia Burger
 
-Para instalar a Lanchonete API, siga estas etapas:
+Para instalar a Grecia Burger, siga estas etapas:
 
 - Clone o repositório em sua maquina local ou servidor;
 
@@ -38,7 +40,7 @@ php -S localhost:(porta de preferência)
 
 - Agora acesse via browser o endereço da aplicação;
 
-## ☕ Usando a Lanchonete API
+## ☕ Usando o Grecia Burger
 
 Ao acessar a aplicação no Browser, a primeira tela será a de Login, por padrão, o login inicial é:
 
@@ -51,4 +53,4 @@ Após acessar com o login acima, será possivel alterar a senha do login de admi
 
 
 
-[⬆ Voltar ao topo](#lanchonete-api)<br>
+[⬆ Voltar ao topo](#grecia-burger)<br>
