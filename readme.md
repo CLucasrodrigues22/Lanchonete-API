@@ -3,7 +3,7 @@
 
 <img src="https://github.com/CLucasrodrigues22/Lanchonete_pdo_aluno/blob/master/assets/webfonts/dashboard.png" alt="Lanchonete Dashboard">
 
-> Esse aplicação foi criada para gerenciamento de uma lanchonete (genérica) usando PHP(DAO) e Mysql no Backend.
+> Esse aplicação foi criada para gerenciamento de uma lanchonete (genérica) usando PHP(DAO) e Mysql no Backend em Curso.
 
 ### Funções da aplicação
 

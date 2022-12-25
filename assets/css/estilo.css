@@ -1,6 +1,9 @@
 body {
 	background: #f1f1f1;
 }
+.conteudo {
+	margin-top: 70px;
+}
 .row {
 	margin-bottom: 15px;
 }
@@ -33,7 +36,25 @@ body {
 #produtos_categoria, #vendas_status {
 	height: 250px;
 }
-.imgprod {
-	width: 385px;
-    height: 300px;
+img.item {
+	max-height: 315px;
+	object-fit: cover;
+}
+.owl-next, .owl-prev {
+	font-size: 70px !important;
+	position: relative;
+    top: -235px;
+}
+.owl-prev {
+	left: -210px;
+}
+.owl-next {
+	left: 210px;
+}
+.owl-dots {
+	position: relative;
+    top: -120px;
+}
+.card-body.owl-carousel {
+	max-height: 370px;
 }
