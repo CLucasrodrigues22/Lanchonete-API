@@ -20,6 +20,7 @@ if(empty($cliente)) {
 	$alert = 'danger';
 	header("Location: login.php?msg=$msg&alert=$alert&tipo=$tipo");
 } else {
+	session_start();
 	$_SESSION['nome'] = $cliente->getNome();
 	$_SESSION['email'] = $cliente->getEmail();
 	$_SESSION['telefone'] = $cliente->getCelular();
@@ -38,8 +39,10 @@ if(empty($cliente)) {
 	$alert = 'success';
 	if($tipo != 'logar') {
 		header("Location: finaliza_compra.php?msg=$msg&alert=$alert");
+		exit;
 	}else {
 		header("Location: index.php?msg=$msg&alert=$alert");
+		exit;
 	}
 }
 ?>

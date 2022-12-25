@@ -19,9 +19,9 @@ class ImagemDAO extends Model
     }
 
     public function alteraImagem(Imagem $imagem) {
-    	$values = "descricao = '{$produto->getDescricao()}',
-    				caminho = '{$produto->getCaminho()}',
-    				produto_id = '{$produto->getProdutoId()}'";
+    	$values = "descricao = '{$imagem->getDescricao()}',
+    				caminho = '{$imagem->getCaminho()}',
+    				produto_id = '{$imagem->getProdutoId()}'";
     	$this->alterar($imagem->getId(), $values);
     }
 
