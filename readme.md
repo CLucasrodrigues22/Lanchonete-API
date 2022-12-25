@@ -1,7 +1,7 @@
 # Projeto Lanchonete API
 
 
-<img src="https://github.com/CLucasrodrigues22/Lanchonete_pdo_aluno/blob/master/assets/webfonts/dashboard.png" alt="Lanchonete Dashboard">
+<img src="https://github.com/CLucasrodrigues22/grecia-burger/admin/db/grecia-burger.png" alt="Lanchonete Dashboard">
 
 > Esse aplicação foi criada para gerenciamento de uma lanchonete (genérica) usando PHP(DAO) e Mysql no Backend em Curso.
 
