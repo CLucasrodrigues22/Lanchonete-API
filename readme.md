@@ -1,7 +1,7 @@
 # Projeto Grecia Burger
 
 
-<img src="https://drive.google.com/file/d/1IMcN5jxzcQBT88wHuRfOymsmiLEDns0p/view?usp=share_link" alt="Lanchonete Dashboard">
+<img src="https://github.com/CLucasrodrigues22/grecia-burger/blob/master/admin/bd/Gr%C3%A9cia-Burguer.png" alt="Lanchonete Dashboard">
 
 > Esse aplicação foi criada para gerenciamento de uma lanchonete (genérica) usando PHP(DAO) e Mysql no Backend em Curso.
 
