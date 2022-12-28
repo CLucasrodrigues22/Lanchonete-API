@@ -67,7 +67,7 @@ if($acao == 'deletar' && $permissoes['delete']) {
 
 	$produto_id = $_POST['produto_id'];
 	/**
-	Configurações de upload de imagens
+	* Configurações de upload de imagens
 	*/
 	$upload['pasta_imagens'] = 'assets/img/produtos/';
 	$pasta = $upload['pasta_imagens'] . $produto_id . '/';
