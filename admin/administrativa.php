@@ -10,7 +10,6 @@ $total_vendas_finalidas = $relatorioDAO->contar('vendas', "status = 'Finalizada'
 $total_vendas_pendentes = $relatorioDAO->contar('vendas', "status = 'Pendente'");
 $produtos_por_categoria = json_encode($relatorioDAO->contarProdutosCategoria('produtos'));
 $vendas_por_status = json_encode($relatorioDAO->contarVendasStatus());
-$evolucao_vendas = $relatorioDAO->evolucaoVendas();
 ?>
 <div class="row col">
 	<h1>Dashboard</h1>
@@ -90,7 +89,6 @@ $evolucao_vendas = $relatorioDAO->evolucaoVendas();
 <script>
 	var dadosProdCategoria = JSON.parse( '<?php echo $produtos_por_categoria; ?>' );
 	var dadosVendasStatus = JSON.parse( '<?php echo $vendas_por_status; ?>' );
-    // var dataEvolucaoVendas = JSON.parse( '<?php echo $evolucao_vendas; ?>' );
 
 	dataProdCategoria = [];
 	for (var x in dadosProdCategoria) {
@@ -205,14 +203,6 @@ Highcharts.chart('evolucao_vendas', {
     subtitle: {
         text: 'Evolução diária'
     },
-    xAxis: {
-        categories: [
-
-	        <?php foreach ($evolucao_vendas as $value) {
-	        	echo "'".$value['data']."',";
-	        } ?>
-        ]
-    },
     yAxis: {
         title: {
             text: 'Valor (R$)'
@@ -225,14 +215,6 @@ Highcharts.chart('evolucao_vendas', {
             },
             enableMouseTracking: true
         }
-    },
-    series: [{
-        name: 'Valor Vendas',
-        data: [
-        	<?php foreach ($evolucao_vendas as $value) {
-	        	echo $value['total'].",";
-	        } ?>]
-    	}
-    ]
+    }
 });
 </script>
